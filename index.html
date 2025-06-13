@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist de Contribuintes do Condomínio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Checklist de Contribuintes do Condomínio</h1>
+    <div class="container">
+        <div class="cobrancas-tabs" id="cobrancas-tabs"></div>
+        <div class="cobranca-controls">
+            <input type="text" id="nome-cobranca" placeholder="Nome da cobrança (ex: Junho/2025)">
+            <input type="number" id="valor-cobranca" placeholder="Valor (R$)" min="0" step="0.01">
+            <button id="add-cobranca">Nova Cobrança</button>
+        </div>
+        <br>
+        <div class="cadastro-morador">
+            <h3>Cadastrar/Editar morador</h3>
+            <form id="form-cadastro">
+                <input type="hidden" id="id-morador">
+                <input type="text" id="nome-morador" placeholder="Nome do morador" required>
+                <input type="text" id="apto-morador" placeholder="Apartamento (ex: Bloco 1, Apt 101)" required>
+                <button type="submit">Salvar</button>
+            </form>
+            <div id="cadastro-msg"></div>
+        </div>
+        <div class="controls">
+            <input type="text" class="search-box" placeholder="Pesquisar por nome ou apartamento...">
+            <div class="stats">
+                <div class="stat-box">Total: <span id="total-count">0</span></div>
+                <div class="stat-box">Pagos: <span id="paid-count">0</span></div>
+                <div class="stat-box">Pendentes: <span id="pending-count">0</span></div>
+            </div>
+            
+        </div>
+        <div class="checklist-container" id="checklist-container"></div>
+        <div class="relatorio-mensal" id="relatorio-mensal"></div>
+        <button id="mostrar-extrato">Mostrar Extrato de Pagamentos</button>
+        <button id="baixar-extrato">Baixar Extrato (.txt)</button>
+        <div class="relatorio-mensal" id="relatorio-geral"></div>
+        <div id="extrato-pagos" class="extrato-pagos" style="display:none"></div>
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
